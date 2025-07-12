@@ -1,13 +1,12 @@
-import { Answer } from "../entities/answer";
+import { Answer } from '@/domain/forum/enterprise/entities/answer';
 import { AnswersRepository } from '../repositories/answers-repository';
 import { AnswerQuestionUseCase } from './answer-question';
 
 const fakeAnswersRepository: AnswersRepository = {
   create: async (answer: Answer) => {
     return;
-  }
-}
-
+  },
+};
 
 test('create an answer', async () => {
   const sut = new AnswerQuestionUseCase(fakeAnswersRepository);
@@ -19,4 +18,4 @@ test('create an answer', async () => {
   });
 
   expect(answer.content).toBe('This is an answer');
-})
+});
